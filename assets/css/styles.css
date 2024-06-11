@@ -1,0 +1,71 @@
+/* ESTILOS DA NAVBAR */
+.navbar {
+    padding: 0% 0%;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 5em;
+}
+
+.btn-secondary {
+    background-color: #9370DB;
+    border: none;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #6959CD;
+}
+
+
+.btn-secondary .bi {
+    color: white;
+    font-size: 1.5em;
+}
+
+.dropdown-menu {
+    background-color: #9370DB;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #7a5ebc;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #6959CD;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -0.125rem;
+}
+
+/*STYLES DA SECTION LIVROS RECENTES*/
+
+.sectionCfg {
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+    width: 100%;
+    margin: 0.75em 1.5em 0.75em 1.5em;
+    height: 220px;
+    background-color: red;
+    border: 1px solid #09ff00;
+}
+.mainSettings {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

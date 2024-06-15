@@ -177,7 +177,8 @@ body{
     width: 85%;
     border: none;
     background-color: #ecf0f1;
-    margin: 3px;    
+    margin: 3px;
+    padding: 8px;
 }
 
 .lable-input{

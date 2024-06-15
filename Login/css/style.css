@@ -12,7 +12,7 @@
     background-color: #ecf0f1;
 }
 .content{
-    background-color: grey;
+    background-color: #fff;
     border-radius: 15px;
     width: 80%;
     height: 80%;
@@ -20,21 +20,31 @@
     align-items: center;
 
 }
-.second-content{
+.content::before{
+    content: "" ;
     position: absolute;
-    display: none;
+    background-color:#9370DB ;
+    width: 40%;
+    height: 100%;
 }
 
 .first-content{
     display: flex;
+    position: relative;
 }
 
 .first-column{
     text-align: center;
     flex: 1 0 auto;
 }
+
 .second-column{
     flex: 2 0 auto;
+}
+
+.second-content{
+    position: absolute;
+    display: none;
 }
 
 .list-social-midia{

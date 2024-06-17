@@ -15,34 +15,116 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Scripts da sessão livros recentes
-document.addEventListener("DOMContentLoaded", function() {
-    const bookRow = document.getElementById("bookRow");
+/* SCRIPTS DO CARROSSEL */
 
-    books.forEach((book, index) => {
-        const colDiv = document.createElement("div");
-        colDiv.classList.add("col-md-6");
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById('carousel-track');
 
-        const bookDiv = document.createElement("div");
-        bookDiv.classList.add("book");
+    books.forEach(book => {
+        const bookItem = document.createElement('li');
 
-        const bookContent = `
-            <img src="assets/images/${book.coverImage}" alt="${book.title}">
-            <div class="book-details">
-                <h2>${book.title}</h2>
-                <p><strong>Autor:</strong> ${book.author}</p>
-                <p><strong>Categoria:</strong> ${book.category}</p>
-                <p>${book.synopsis}</p>
-            </div>
-        `;
-        bookDiv.innerHTML = bookContent;
+        const bookLink = document.createElement('a');
+        bookLink.href = book.link;
 
-        colDiv.appendChild(bookDiv);
+        const bookImage = document.createElement('img');
+        bookImage.src = book.image;
+        bookImage.alt = book.title;
 
-        if (index % 2 === 0) {
-            bookRow.appendChild(document.createElement("div")).classList.add("row");
-        }
-
-        bookRow.lastElementChild.appendChild(colDiv);
+        bookLink.appendChild(bookImage);
+        bookItem.appendChild(bookLink);
+        track.appendChild(bookItem);
     });
+
+    updateCarousel();
+    setInterval(nextSlide, 6000); // Avança automaticamente a cada 6 segundos
 });
+
+let currentSlide = 0;
+const slidesToShow = 4; // Número de livros para mostrar por vez
+const track = document.getElementById('carousel-track');
+const totalSlides = books.length;
+
+function updateCarousel() {
+    const slideWidth = track.children[0].offsetWidth + 20; // 20 é a margem entre slides
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+    } else {
+        currentSlide = totalSlides - slidesToShow;
+    }
+    updateCarousel();
+}
+
+function nextSlide() {
+    if (currentSlide < totalSlides - slidesToShow) {
+        currentSlide++;
+    } else {
+        currentSlide = 0;
+    }
+    updateCarousel();
+}
+
+// SCRIPTS PAGINA ESCREVER //
+
+function formatDoc(cmd, value=null) {
+	if(value) {
+		document.execCommand(cmd, false, value);
+	} else {
+		document.execCommand(cmd);
+	}
+}
+
+function addLink() {
+	const url = prompt('Insert url');
+	formatDoc('createLink', url);
+}
+
+
+
+
+const content = document.getElementById('content');
+
+content.addEventListener('mouseenter', function () {
+	const a = content.querySelectorAll('a');
+	a.forEach(item=> {
+		item.addEventListener('mouseenter', function () {
+			content.setAttribute('contenteditable', false);
+			item.target = '_blank';
+		})
+		item.addEventListener('mouseleave', function () {
+			content.setAttribute('contenteditable', true);
+		})
+	})
+})
+
+
+const showCode = document.getElementById('show-code');
+let active = false;
+
+showCode.addEventListener('click', function () {
+	showCode.dataset.active = !active;
+	active = !active
+	if(active) {
+		content.textContent = content.innerHTML;
+		content.setAttribute('contenteditable', false);
+	} else {
+		content.innerHTML = content.textContent;
+		content.setAttribute('contenteditable', true);
+	}
+})
+
+
+
+const filename = document.getElementById('filename');
+
+function fileHandle(value) {
+	if(value === 'new') {
+		content.innerHTML = '';
+		filename.value = 'untitled';
+	} else if(value === 'pdf') {
+		html2pdf(content).save(filename.value);
+	}
+}

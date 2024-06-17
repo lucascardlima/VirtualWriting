@@ -1,0 +1,437 @@
+ /* ESTILOS DA NAVBAR */
+ .navbar {
+     padding: 0% 0%;
+ }
+
+ .navbar-brand {
+     color: white;
+     font-size: 1.5em;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     text-align: center;
+     border-bottom: 5em;
+ }
+
+ .btn-secondary {
+     background-color: #9370DB;
+     border: none;
+ }
+
+ .btn-secondary:hover,
+ .btn-secondary:focus,
+ .btn-secondary:active {
+     background-color: #6959CD;
+ }
+
+
+ .btn-secondary .bi {
+     color: white;
+     font-size: 1.5em;
+ }
+
+ .dropdown-menu {
+     background-color: #9370DB;
+ }
+
+ .dropdown-menu .dropdown-item {
+     color: white;
+ }
+
+ .dropdown-menu .dropdown-item:hover {
+     background-color: #7a5ebc;
+ }
+
+ .dropdown-menu .dropdown-item:hover {
+     background-color: #6959CD;
+ }
+
+ .dropdown-submenu {
+     position: relative;
+ }
+
+ .dropdown-submenu>.dropdown-menu {
+     top: 0;
+     left: 100%;
+     margin-top: -0.125rem;
+ }
+
+ /*STYLES DA SECTION LIVROS RECENTES*/
+
+ .sectionCfg {
+     display: flex;
+     flex-direction: row;
+     padding: 0%;
+     width: 100%;
+     margin: 0.75em 1.5em 0.75em 1.5em;
+     height: 220px;
+     background-color: red;
+     border: 1px solid #09ff00;
+ }
+
+ .mainSettings {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+ }
+
+ /* CSS do perfil do site */
+ .container-perfil {
+     display: flex;
+     max-width: 96%;
+     max-height: 100%;
+     position: relative;
+ }
+
+ .lado-esquerdo {
+     background-color: #d6cde7;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+     margin: 8px;
+     border-radius: 10px;
+     width: 50%;
+     height: 100%;
+ }
+
+ .lado-direito {
+     background-color: #d6cde7;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+     margin: 8px;
+     border-radius: 10px;
+     overflow-y: auto;
+     width: 50%;
+     height: 100%;
+
+ }
+
+ .format-imagem-perfil {
+     width: 250px;
+     height: 250px;
+     border-radius: 50%;
+     overflow: hidden;
+     margin: 0 auto -25px auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+ }
+
+ .foto-perfil {
+     width: 105%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+ .nivel-escritor {
+     position: relative;
+     width: 50px;
+     height: 50px;
+     background-color: white;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+ }
+
+ .format_icon {
+     width: 43px;
+     height: 43px;
+ }
+
+ .tooltip {
+     visibility: hidden;
+     width: 120px;
+     background-color: black;
+     color: #fff;
+     text-align: center;
+     border-radius: 6px;
+     padding: 5px 0;
+     position: absolute;
+     z-index: 1;
+     bottom: 125%;
+     left: 50%;
+     margin-left: -60px;
+     opacity: 0;
+     transition: opacity 0.3s;
+ }
+
+ .nivel-escritor:hover .tooltip {
+     visibility: visible;
+     opacity: 1;
+ }
+
+ .tooltip::after {
+     content: "";
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     margin-left: -5px;
+     border-width: 5px;
+     border-style: solid;
+     border-color: black transparent transparent transparent;
+     text-align: justify;
+ }
+
+ .format-nome-perfil {
+     text-align: center;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 20px;
+     font-weight: bold;
+ }
+
+ .format-arroba {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 17px;
+     color: rgba(0, 0, 0, 0.616);
+     margin: -17px 0px 0px 0px;
+
+ }
+
+ .descricao-style {
+     box-shadow: 0 8px 12px rgba(0.2, 0.2, 0.2, 0.2);
+     border-color: rgba(0, 0, 0, 0.5);
+     border-radius: 5px;
+     border-style: solid;
+     border-width: 0.5px;
+     margin: 10px 11px 10px 11px;
+     padding: 3px 10px 3px 10px;
+     text-align: justify;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 16px;
+ }
+
+ h3 {
+     font-weight: bold;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 23px;
+ }
+
+ .format-hashtag {
+     color: #3660b3;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 16px;
+     font-weight: bold;
+ }
+
+ .format-titulo {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 27px;
+     font-weight: bold;
+ }
+
+ /* CSS das boxes de informações */
+
+ .box-infor {
+     display: flex;
+     flex-direction: column;
+     background-color: #fff;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     border-radius: 8px;
+     overflow: hidden;
+     max-width: 900px;
+     max-height: 900px;
+     margin: 0px 4px 10px 4px;
+     width: 100%;
+     height: auto;
+ }
+
+ .infor-image {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+ }
+
+ .infor-details {
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .infor-title {
+     margin: 10px 0px 1px 0px;
+     font-size: 1.5em;
+     font-weight: bold;
+     font-family: 'Courier New', Courier, monospace;
+ }
+
+ .infor-descritor {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 16px;
+     text-align: justify;
+     margin: 0px 0px 2px 0px;
+ }
+
+ .infor-author {
+     margin: 0px 2px 3px 0px;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 15px;
+     font-weight: bold;
+ }
+
+ .infor-publisher {
+     margin: 0px 2px 3px 0px;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 15px;
+     font-weight: bold;
+ }
+
+ .infor-hashtag {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 15px;
+     font-weight: bold;
+     color: #3660b3;
+
+ }
+
+ @media (min-width: 620px) {
+     .box-infor {
+         flex-direction: row;
+     }
+
+     .infor-image {
+         width: 150px;
+     }
+
+     .infor-details {
+         align-items: flex-start;
+         width: calc(100% - 150px);
+     }
+ }
+
+ @media (min-width: 900px) {
+     .box-infor {
+         width: 870px;
+         height: 190px;
+     }
+ }
+
+ .titulo_right_side {
+     margin: 10px 0px 5px 0px;
+
+ }
+
+ .format_titulo {
+     font-weight: bold;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 28px;
+ }
+
+ /* CSS Animação das redes sociais */
+ @keyframes animate {
+     100% {
+         filter: hue-rotate(360deg)
+     }
+ }
+
+ .links {
+     padding-left: 70px;
+ }
+
+ ul {
+     list-style-type: none;
+     display: flex;
+     position: relative;
+     gap: 40px;
+     justify-content: center;
+     align-items: center;
+     padding-top: 40px;
+ }
+
+ ul li {
+     width: 55px;
+     height: 55px;
+     background-color: rgb(237, 231, 231);
+     box-shadow: 0 8px 25px #00000055;
+     border-radius: 50px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     transition: .2s;
+ }
+
+ ul li div {
+     position: absolute;
+ }
+
+ ul li:hover {
+     width: 180px;
+ }
+
+ ul li .icon {
+     color: #C0C0C0;
+     font-size: 30px;
+     transition: .2s;
+ }
+
+ ul li .text {
+     color: white;
+     font-size: 15px;
+     transform: scale(0);
+     transition-delay: .1s;
+ }
+
+ ul li:hover .text {
+     transform: scale(1)
+ }
+
+ ul li:hover .icon {
+     transform: scale(0);
+ }
+
+ ul li::before {
+     content: '';
+     position: absolute;
+     background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+     inset: 0;
+     opacity: 0;
+     border-radius: 50px;
+ }
+
+ ul li:hover::before {
+     opacity: 1;
+ }
+
+ @media (max-width: 1880px) {
+     .box-infor {
+         max-width: 93%;
+         height: 170%;
+     }
+ }
+
+ @media (max-width: 992px) {
+     .box-infor {
+         max-width: 85%;
+         height: 180%;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .box-infor {
+         max-width: 80%;
+         height: 180%;
+     }
+ }
+
+ @media (max-width: 576px) {
+     .box-infor {
+         max-width: 75%;
+         height: 180%;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .box-infor {
+         max-width: 70%;
+         height: 180%;
+     }
+ }
